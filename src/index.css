@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Inter", ui-serif, Georgia, serif;
+
+  --color-brand-blue: #2563eb;
+  --color-brand-slate: #0f172a;
+  --color-brand-emerald: #10b981;
+}
+
+@layer base {
+  body {
+    @apply antialiased bg-slate-50 text-slate-900 selection:bg-blue-100 selection:text-blue-900 font-sans;
+  }
+}
+
+/* Custom UI Elements */
+.professional-card {
+  @apply bg-white border border-slate-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-300;
+}
+
+.professional-btn-primary {
+  @apply bg-slate-900 text-white px-6 py-2.5 rounded-lg text-sm font-semibold hover:bg-slate-800 transition-colors flex items-center justify-center;
+}
+
+.professional-btn-secondary {
+  @apply bg-white border border-slate-200 text-slate-700 px-6 py-2.5 rounded-lg text-sm font-semibold hover:bg-slate-50 transition-colors flex items-center justify-center;
+}
+
+.professional-input {
+  @apply bg-white border border-slate-200 rounded-lg px-4 py-3 outline-none focus:ring-2 ring-blue-500/20 focus:border-blue-500 transition-all text-sm;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 rounded-full hover:bg-slate-400 transition-colors;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
